@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>v-bind font-size</title>
+    <title>v-bind background-color</title>
     <style>
 
         body {
@@ -18,12 +18,13 @@
 </head>
 <body>
 
-<h1>'v-bind' Font Size Example</h1>
+<h1>'v-bind' Background Color Example</h1>
 
-<p>The browser sets the font-size based on the value of 'size' in the Vue instance.</p>
+<p>The browser sets the background color with 'hsl()' based on the value of 'bgVal' in the Vue instance.</p>
+<p>Try changing the 'bgVal' property value from anything between 0 and 360.</p>
 
 <div id="app">
-    <div v-bind:style="{ fontsize : size, marginLeft : margin_left, fontFamily : font, fontSize : font_size + 'px'  }">Text example</div>
+    <div v-bind:style="{ backgroundColor: 'hsl('+ bgVal + ',80%,80%)' }">Notice the background color on this div tag.</div>
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -31,18 +32,12 @@
     const app = Vue.createApp({
         data() {
             return {
-                size: '28px',
-                margin_left: '400px',
-                font : 'consolas, sans-serif',
-                font_size : 25
+                bgVal: 200
             }
         }
     })
     app.mount('#app')
 </script>
-
-
-
 
 </body>
 </html>

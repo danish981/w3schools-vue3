@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        body {
+            font-family: "JetBrains Mono", sans-serif;
+        }
+
+        #app > div {
+            width: 200px;
+            padding: 20px;
+            border: dashed black 1px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+<h1>'v-bind' Font Size Example</h1>
+
+<p>We can write CSS properties in kebab-case and in hyphens and get the same result, but it is not recommended.</p>
+
+<!-- another way to write css and make it dynamic with returned values of vue -->
+
+<!-- todo : BUT IT IS NOT RECOMMENDED -->
+
+<div id="app">
+    <div v-bind:style="{ 'font-size': size + 'px' }">Text example</div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                size: 25
+            }
+        }
+    })
+    app.mount('#app')
+</script>
+
+</body>
+</html>
