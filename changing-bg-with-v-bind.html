@@ -5,7 +5,6 @@
     <style>
 
         body {
-            background-color: wheat;
             font-family: 'JetBrains Mono', sans-serif;
         }
 
@@ -13,22 +12,19 @@
             width: 200px;
             padding: 20px;
             border: dashed black 1px;
-        }
-
-        .myClass {
             background-color: lightcoral;
         }
     </style>
 </head>
 <body>
 
-<h1>Example: 'v-bind:' shorthand form ':'.</h1>
-<p>Take a look at the div where the class is set with the 'v-bind:' shorthand form ':'.</p>
+<h1>'v-bind' Background Color Example</h1>
+
+<p>The browser sets the background color with 'hsl()' based on the value of 'bgVal' in the Vue instance.</p>
+<p>Try changing the 'bgVal' property value from anything between 0 and 360.</p>
 
 <div id="app">
-    <div :class="{ myClass: isImportant }">
-        Importance visualized by background color
-    </div>
+    <div v-bind:style="{ backgroundColor: 'hsl('+ bgVal + ',80%,80%)' }">Notice the background color on this div tag.</div>
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -36,7 +32,7 @@
     const app = Vue.createApp({
         data() {
             return {
-                isImportant: true
+                bgVal: 200
             }
         }
     })

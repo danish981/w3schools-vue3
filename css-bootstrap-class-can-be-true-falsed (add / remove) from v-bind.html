@@ -10,23 +10,23 @@
         }
 
         #app > div {
-            width: 200px;
+            width: 500px;
             padding: 20px;
             border: dashed black 1px;
         }
-
         .myClass {
             background-color: lightcoral;
         }
     </style>
 </head>
-<body>
+<body style="margin-left: 50px">
 
-<h1>Example: 'v-bind:' shorthand form ':'.</h1>
-<p>Take a look at the div where the class is set with the 'v-bind:' shorthand form ':'.</p>
+<h1>Example</h1>
+<p>'v-bind' is used to assign class with true/false.</p>
+<p>The browser set the 'myClass' class on the div tag when set to 'true'.</p>
 
 <div id="app">
-    <div :class="{ myClass: isImportant }">
+    <div v-bind:class="{ myClass : true }">
         Importance visualized by background color
     </div>
 </div>
@@ -34,11 +34,7 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script>
     const app = Vue.createApp({
-        data() {
-            return {
-                isImportant: true
-            }
-        }
+        // The Vue instance is empty
     })
     app.mount('#app')
 </script>
