@@ -1,48 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>'v-bind' Image Source Example</title>
     <style>
         #app {
-            font-family: 'JetBrains Mono', sans-serif;
-            display: inline-block;
-            padding: 10px;
-            font-size: x-large;
-            background-color: lightgreen;
+            border: dashed black 1px;
+            width: 250px;
+            padding: 0 10px 10px 10px;
+        }
+
+        img {
+            width: 100%;
         }
     </style>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
 </head>
 <body>
 
-<h1>Vue Example</h1>
-
-<p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
+<h1>'v-bind' Image Source Example</h1>
 
 <div id="app">
-    {{ message }}
-    {{ 'Random Number => ' + Math.ceil(Math.random() * 100) }}
+    <p>The browser finds the 'src' attribute value from the Vue instance with the use of 'v-bind'.</p>
+    <!-- <img alt="the image" v-bind:src="pathToImage">-->
+
+    <!-- this wont work -->
+    <!-- <img alt="the image" src="{{ pathToImage }}">-->
+
+    <!-- we have to bind the path -->
+    <!-- <img alt="the image" v-bind:src="url">-->
+    <!-- you can change the return var name url -->
+
+    <!-- look how fascinating it is to get image path from vue data method -->
+    <img alt="girl avatar image" v-bind:src="pathToImage">
+
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
 <script>
-
     const app = Vue.createApp({
         data() {
             return {
-                message: 'hello world'
+                pathToImage: "./assets/images/female-avatar.png"
             }
         }
-    });
-
-    app.mount('#app');
-
+    })
+    app.mount('#app')
 </script>
 
 </body>
