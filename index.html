@@ -1,37 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>'v-bind' Image Source Example</title>
+    <title>v-bind font-size</title>
     <style>
-        #app {
+        #app > div {
+            width: 200px;
+            padding: 20px;
             border: dashed black 1px;
-            width: 250px;
-            padding: 0 10px 10px 10px;
-        }
-
-        img {
-            width: 100%;
+            background-color: lightcoral;
         }
     </style>
 </head>
 <body>
 
-<h1>'v-bind' Image Source Example</h1>
+<h1>'v-bind' Font Size Example</h1>
+
+<p>The browser sets the font-size based on the value of 'size' in the Vue instance.</p>
 
 <div id="app">
-    <p>The browser finds the 'src' attribute value from the Vue instance with the use of 'v-bind'.</p>
-    <!-- <img alt="the image" v-bind:src="pathToImage">-->
-
-    <!-- this wont work -->
-    <!-- <img alt="the image" src="{{ pathToImage }}">-->
-
-    <!-- we have to bind the path -->
-    <!-- <img alt="the image" v-bind:src="url">-->
-    <!-- you can change the return var name url -->
-
-    <!-- look how fascinating it is to get image path from vue data method -->
-    <img alt="girl avatar image" v-bind:src="pathToImage">
-
+    <div v-bind:style="{ fontsize : size }">Text example</div>
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -39,7 +26,7 @@
     const app = Vue.createApp({
         data() {
             return {
-                pathToImage: "./assets/images/female-avatar.png"
+                size: '28px'
             }
         }
     })
