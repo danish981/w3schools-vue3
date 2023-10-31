@@ -6,22 +6,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 
 </head>
-<body class="card-body">
+<body class="card-body mx-5">
 
-<h1>Example</h1>
-<p>'v-bind' is used to assign class with true/false.</p>
-<p>The browser set the 'myClass' class on the div tag when set to 'true'.</p>
+<h1 class="text-info font-weight-bold">Example</h1>
 
 <div id="app">
-    <div :class="isImportant ? bgPrimary : bgInfo">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque debitis deserunt dicta dignissimos
-        dolorem doloremque eaque eos id illo in ipsum laborum, magni molestias neque nesciunt nisi non nulla obcaecati,
-        odit pariatur, perferendis possimus quae quasi quidem repellat rerum saepe similique suscipit totam ut voluptate
-        voluptatum. A debitis id necessitatibus rerum. Aliquam consequuntur culpa cumque sit. Animi deleniti esse harum
-        magni molestiae quam similique tenetur ut? A alias aperiam architecto blanditiis doloribus dolorum eos eveniet
-        expedita, nostrum odit possimus quia temporibus unde. Aliquam aut corporis cumque dolor eius eligendi expedita
-        inventore maiores, necessitatibus praesentium quidem quos sed. Quia!
-    </div>
+    <p v-if="text.includes('sdfsf')">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, sequi?</p>
+
+    <p v-else-if="text.includes('courage')">the courage has courage</p>
+
+    <p v-else>amet assumenda aut commodi consequatur
+        dignissimos dolore doloremque dolores et, eveniet expedita facilis fuga harum id impedit in inventore iure
+        labore laborum, maiores minima molestiae molestias necessitatibus neque nesciunt obcaecati odit officiis
+        pariatur provident quam quisquam, quod similique sunt unde voluptas. Accusamus asperiores cum delectus dolore
+        doloremque ea eaque ex in laboriosam modi odio perspiciatis praesentium, quam quibusdam quo repellendus sed
+        voluptas. Eveniet, labore nihil officia pariatur quasi quibusdam ratione suscipit. Aliquid doloremque eaque enim
+        id laudantium molestias natus quis reprehenderit tempora. Consectetur ex fugiat fugit necessitatibus neque
+        nisi!</p>
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -29,9 +30,7 @@
     const app = Vue.createApp({
         data() {
             return {
-                isImportant: false,
-                bgPrimary: 'bg-primary',
-                bgInfo: 'bg-info'
+                text: 'the courage does not have courage'
             }
         }
     })
