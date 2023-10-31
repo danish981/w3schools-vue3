@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My first Vue page</title>
+    <title>v-bind background-color</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
     <style>
-        #app {
-            display: inline-block;
-            padding: 10px;
-            font-size: x-large;
-            background-color: lightgreen;
+        #app > div {
+            width: 200px;
+            padding: 20px;
+            border: dashed black 1px;
+        }
+
+        .myClass {
+            background-color: lightcoral;
         }
     </style>
 </head>
-<body>
+<body class="card-body">
 
-<h1>Vue Example</h1>
-
-<p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
+<h1>Example</h1>
+<p>'v-bind' is used to assign class with true/false.</p>
+<p>The browser set the 'myClass' class on the div tag when set to 'true'.</p>
 
 <div id="app">
-    {{ message }}
-    {{ Math.ceil(Math.random()*9)}}
+    <div v-bind:class="{ myClass: true }">
+        Importance visualized by background color
+    </div>
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
 <script>
     const app = Vue.createApp({
-        data() {
-            return {
-                message: "Hello World!"
-            }
-        }
+
     })
-
     app.mount('#app')
-
 </script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 
 
 </body>
