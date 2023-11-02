@@ -3,8 +3,6 @@
   <head>
     <title>Learning Vue3</title>
 
-    <link rel="stylesheet" href="assets/style.css" />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -12,7 +10,19 @@
   </head>
   <body class="card-body mx-5">
     <div id="app">
-      <p></p>
+      <h4><span class="badge badge-secondary">events</span> modifiers</h4>
+
+      <p>Increasing counter : {{ counter }}</p>
+
+      <button class="btn btn-primary" v-on:click="counter++">Add</button>
+
+      <button
+        class="btn btn-secondary ml-3"
+        v-if="counter > 0"
+        v-on:click="counter--"
+      >
+        Subtract
+      </button>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -20,7 +30,9 @@
     <script>
       const app = Vue.createApp({
         data() {
-          return {};
+          return {
+            counter: 0,
+          };
         },
       });
       app.mount("#app");
